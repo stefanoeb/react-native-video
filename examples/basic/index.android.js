@@ -12,7 +12,7 @@ import {
   View,
 } from 'react-native';
 
-import Video from 'react-native-video';
+import Video from 'react-native-video-exoplayer';
 
 class VideoPlayer extends Component {
 
