@@ -1,6 +1,6 @@
-package com.brentvatne.react;
+package com.eightfit.react;
 
-import com.brentvatne.exoplayer.ReactExoplayerViewManager;
+import com.eightfit.exoplayer.ReactExoplayerViewManager;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
 import com.facebook.react.bridge.NativeModule;

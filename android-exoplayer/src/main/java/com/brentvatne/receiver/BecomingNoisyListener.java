@@ -1,4 +1,4 @@
-package com.brentvatne.receiver;
+package com.eightfit.receiver;
 
 public interface BecomingNoisyListener {
 

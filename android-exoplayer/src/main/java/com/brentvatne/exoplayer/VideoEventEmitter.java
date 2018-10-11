@@ -1,4 +1,4 @@
-package com.brentvatne.exoplayer;
+package com.eightfit.exoplayer;
 
 import android.support.annotation.StringDef;
 import android.view.View;

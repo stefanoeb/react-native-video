@@ -1,4 +1,4 @@
-package com.brentvatne.exoplayer;
+package com.eightfit.exoplayer;
 
 import android.content.Context;
 import android.content.ContextWrapper;
