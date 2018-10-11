@@ -210,14 +210,15 @@ export default class Video extends Component {
     const isAsset = !!(uri && uri.match(/^(assets-library|ipod-library|file|content|ms-appx|ms-appdata):/));
 
     let nativeResizeMode;
+    const viewName = Platform.OS === 'android' ? 'RCTExoVideo' : 'RCTVideo';
     if (resizeMode === VideoResizeMode.stretch) {
-      nativeResizeMode = NativeModules.UIManager.RCTExoVideo.Constants.ScaleToFill;
+      nativeResizeMode = NativeModules.UIManager[viewName].Constants.ScaleToFill;
     } else if (resizeMode === VideoResizeMode.contain) {
-      nativeResizeMode = NativeModules.UIManager.RCTExoVideo.Constants.ScaleAspectFit;
+      nativeResizeMode = NativeModules.UIManager[viewName].Constants.ScaleAspectFit;
     } else if (resizeMode === VideoResizeMode.cover) {
-      nativeResizeMode = NativeModules.UIManager.RCTExoVideo.Constants.ScaleAspectFill;
+      nativeResizeMode = NativeModules.UIManager[viewName].Constants.ScaleAspectFill;
     } else {
-      nativeResizeMode = NativeModules.UIManager.RCTExoVideo.Constants.ScaleNone;
+      nativeResizeMode = NativeModules.UIManager[viewName].Constants.ScaleNone;
     }
 
     const nativeProps = Object.assign({}, this.props);
