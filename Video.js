@@ -263,7 +263,8 @@ export default class Video extends Component {
 
     return (
       <React.Fragment>
-        <RCTExoVideo ref={this._assignRoot} {...nativeProps} />
+        {Platform.OS === 'android' && <RCTExoVideo ref={this._assignRoot} {...nativeProps} />}
+        {Platform.OS === 'ios' && <RCTVideo ref={this._assignRoot} {...nativeProps} />}        
         {this.props.poster &&
           this.state.showPoster && (
             <View style={nativeProps.style}>
@@ -384,6 +385,14 @@ Video.propTypes = {
   rotation: PropTypes.number,
   ...ViewPropTypes,
 };
+
+const RCTVideo = requireNativeComponent('RCTVideo', Video, {
+  nativeOnly: {
+    src: true,
+    seek: true,
+    fullscreen: true,
+  },
+});
 
 const RCTExoVideo = requireNativeComponent('RCTExoVideo', Video, {
   nativeOnly: {
